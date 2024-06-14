@@ -43,13 +43,11 @@ RUN apt-get --fix-broken install -y \
   && rm -rf /var/lib/apt/lists/*
 
 USER ${USER_NAME}
-ENV JURISCRAPE_PATH /home/${USER_NAME}/juriscrape
 
-WORKDIR ${JURISCRAPE_PATH}
+ARG MAIN_DIR
+ARG DEV_DIR
+WORKDIR ${MAIN_DIR}
 
-
-COPY ../scripts ./scripts
-COPY ./scripts ./scripts
-RUN echo "alias install_packages='bash ${JURISCRAPE_PATH}/scripts/install_packages.sh'" >> ~/.zshrc
+RUN echo "alias install_packages='bash ${DEV_DIR}/scripts/install_packages.sh'" >> ~/.zshrc
 
 CMD ["/bin/zsh"]

@@ -1,9 +1,8 @@
 #!/bin/bash
 
+source "$(dirname $0)/../.env"
+
 clear
-export USER_ID=$(id -u)
-export GROUP_ID=$(id -g)
-export USER_NAME="juriscrape-dev"
 
 # Ensure Docker is running
 if ! docker info > /dev/null 2>&1; then
@@ -25,7 +24,7 @@ docker compose build && clear
 
 echo "Dev Container is ready to start."
 echo "Run the following command to start the VSCODE Dev Container:"
-echo "CTRL + SHIFT + P -> Dev Containers: Open Folder in Container -> Select the current folder /juriscrape"
+echo "CTRL + SHIFT + P -> Dev Containers: Open Folder in Container -> Select the current folder /juriscrape-dev"
 echo
 echo "Alternatively, just attach to the container using the following command:"
 echo "docker compose run dev zsh"

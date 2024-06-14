@@ -6,12 +6,17 @@ services:
       args:
         - USER_ID=${USER_ID}
         - GROUP_ID=${GROUP_ID}
-        - USER_NAME=juriscrape-dev
+        - USER_NAME=${USER_NAME}
+        - MAIN_DIR=${MAIN_DIR}
+        - DEV_DIR=${DEV_DIR}
     environment:
       - MONGO_URL=mongodb://mongo:27018/juriscrape
       - TJ_API_URL=http://dev:3000
       - TJAL_ESAJ_URL=http://dev:3008
       - TJCE_ESAJ_URL=http://dev:3009
+    env_file:
+      - path: .env
+        required: true
     volumes:
       # - /tmp:/tmp:rw
       - ~/.zsh_history:/home/juriscrape-dev/.zsh_history:rw
