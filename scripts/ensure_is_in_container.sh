@@ -2,7 +2,9 @@
 
 set -e
 
-source "$(dirname $0)/../.env"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+source "$SCRIPT_DIR/../.env"
 
 vars=("RUNNING_IN_DOCKER" "MAIN_DIR")
 
