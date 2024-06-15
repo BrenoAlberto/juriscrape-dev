@@ -25,6 +25,10 @@
                 "ms-azuretools.vscode-docker",
                 "orta.vscode-jest",
                 "pkief.material-icon-theme",
+                "ms-python.debugpy",
+                "ms-python.isort",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
                 "rvest.vs-code-prettier-eslint",
                 "yzhang.markdown-all-in-one"
             ]

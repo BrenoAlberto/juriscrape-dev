@@ -15,8 +15,12 @@ RUN groupadd -o -r --gid ${GROUP_ID} ${USER_NAME} \
 
 ENV RUNNING_IN_DOCKER true
 
-# Install Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+RUN apt-get install -y python3-pip python3.10-dev python3.10-venv \
+  && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 \
+  && update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+
+# Install Node.js 20
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
   && apt-get install -y nodejs
 
 # Install Google Chrome
