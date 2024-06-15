@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 
 # Install dependencies
-RUN apt-get update && apt-get install gnupg wget curl git sudo -y 
+RUN apt-get update && apt-get install gnupg wget curl git sudo jq -y 
 
 # Set up user
 ARG USER_ID
