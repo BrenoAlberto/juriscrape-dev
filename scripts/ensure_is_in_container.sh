@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 source "$(dirname $0)/../.env"
 
 vars=("RUNNING_IN_DOCKER" "MAIN_DIR")

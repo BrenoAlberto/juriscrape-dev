@@ -7,6 +7,8 @@ services:
         - USER_ID=${USER_ID}
         - GROUP_ID=${GROUP_ID}
         - USER_NAME=${USER_NAME}
+        - MAIN_LOCAL_DIR=${MAIN_LOCAL_DIR}
+        - USER_HOME=${USER_HOME}
         - MAIN_DIR=${MAIN_DIR}
         - DEV_DIR=${DEV_DIR}
     environment:
@@ -19,8 +21,8 @@ services:
         required: true
     volumes:
       # - /tmp:/tmp:rw
-      - ~/.zsh_history:/home/juriscrape-dev/.zsh_history:rw
-      - ../:/home/juriscrape-dev/juriscrape/:rw
+      - ~/.zsh_history:${USER_HOME}/.zsh_history:rw
+      - ${MAIN_LOCAL_DIR}:${MAIN_DIR}/:rw
     networks:
       - webnet
     depends_on:
