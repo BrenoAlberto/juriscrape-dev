@@ -8,7 +8,7 @@ USER_NAME="juriscrape-dev"
 
 USER_HOME="/home/$USER_NAME"
 MAIN_DIR="$USER_HOME/juriscrape"
-DEV_DIR="$MAIN_DIR/tools/juriscrape-dev"
+DEV_DIR="$MAIN_DIR/tools/dev"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MAIN_LOCAL_DIR="$(cd "$SCRIPT_DIR/../../../" && pwd)"
